@@ -15,12 +15,10 @@ class Solution {
     //     }
     // }
     public void dfs(int i,List<List<Integer>> rooms,boolean[] vis){
-            int n = rooms.get(i).size();
             vis[i]=true;
-            for(int j=0;j<n;j++){
-                int nextroom = rooms.get(i).get(j);
-                if(!vis[nextroom]){
-                    dfs(nextroom,rooms,vis);
+            for(int ele : rooms.get(i)){
+                if(!vis[ele]){
+                    dfs(ele,rooms,vis);
                 }
             }
     }
