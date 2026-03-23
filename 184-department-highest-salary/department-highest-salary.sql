@@ -5,5 +5,5 @@ inner join Department d
 on d.id = e.departmentId
 where e.salary = (
     select MAX(salary) from Employee
-    where departmentId=e.departmentId
+    where departmentId=d.id
 );
