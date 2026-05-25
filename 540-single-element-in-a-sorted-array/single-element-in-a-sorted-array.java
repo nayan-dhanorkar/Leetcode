@@ -7,7 +7,6 @@ class Solution {
                 return nums[i-1];
             }
         }
-        // while(i<=n)
         return nums[n-1];
     }
 }
