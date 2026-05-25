@@ -8,7 +8,7 @@ class Solution {
             min=Math.min(min,salary[i]);
         }
         double x = sum-(max+min);
-        double avg = x*1.0/(n-2);
+        double avg = x/(n-2);
         return avg;
     }
 }
