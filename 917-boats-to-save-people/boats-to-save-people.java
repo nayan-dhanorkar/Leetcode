@@ -6,16 +6,11 @@ class Solution {
         int count=0;
         Arrays.sort(p);
         while(l<=r){
-            if((p[r]+p[l])>limit){
-                r--;
-                count++;
+            if(p[r]+p[l]<=limit){
+                r--;l++;
             }
-            else if((p[r]+p[l])==limit){
-                r--;l++;count++;
-            }
-            else if((p[r]+p[l])<limit){
-                r--;l++;count++;
-            }
+            else r--;
+            count++;
         }
         return count;
     }
