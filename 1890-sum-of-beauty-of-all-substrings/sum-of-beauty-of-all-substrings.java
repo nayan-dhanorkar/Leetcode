@@ -3,19 +3,23 @@ class Solution {
         int ans =0;
         int n = s.length();
         for(int i=0;i<n;i++){
-            int[] freq = new int[26];
+            HashMap<Character,Integer> map = new HashMap<>();
             for(int j=i;j<n;j++){
                 char ch = s.charAt(j);
-                freq[ch-'a']++;
+                if(map.containsKey(ch)){
+                    int freq = map.get(ch);
+                    map.put(ch,freq+1);
+                }
+                else{
+                    map.put(ch,1);
+                }
                 int min = Integer.MAX_VALUE;
                 int max = Integer.MIN_VALUE;
-                for(int k=0;k<26;k++){
-                    if(freq[k]>0){
-                        min = Math.min(min, freq[k]);
-                        max = Math.max(max, freq[k]);
-                    }
+                for(int freq : map.values()){
+                    min = Math.min(min,freq);
+                    max = Math.max(max,freq);
                 }
-            ans+= max-min;
+                ans += max-min;
             }
         }
         return ans;
