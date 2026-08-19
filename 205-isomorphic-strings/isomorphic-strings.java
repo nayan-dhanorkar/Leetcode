@@ -12,8 +12,6 @@ class Solution {
             else{
                 map.put(s.charAt(i),t.charAt(i));
             }
-        }
-        for(int i=0;i<s.length();i++){
             if(map2.containsKey(t.charAt(i))){
                 if(map2.get(t.charAt(i)) != s.charAt(i)){
                     return false;
